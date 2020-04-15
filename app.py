@@ -57,4 +57,4 @@ while True:
                                               os.environ.get("ADAFRUIT_GROUP_FEED_PM10")))
     client.publish(os.environ.get("ADAFRUIT_GROUP_FEED_PM10"), data.pm_ug_per_m3(10),
                    os.environ.get("ADAFRUIT_GROUP_NAME"))
-    time.sleep(5)
+    time.sleep(10)
