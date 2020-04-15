@@ -1,14 +1,9 @@
 import os
-import random
 import sys
 import time
 from pms5003 import PMS5003
-from os.path import join, dirname
-from dotenv import load_dotenv
 from Adafruit_IO import MQTTClient
 
-dotenv_path = join(dirname(__file__), '.env')
-load_dotenv(dotenv_path)
 
 pms5003 = PMS5003(
     device=os.environ.get("PMS5003_DEVICE"),
@@ -57,4 +52,4 @@ while True:
                                               os.environ.get("ADAFRUIT_GROUP_FEED_PM10")))
     client.publish(os.environ.get("ADAFRUIT_GROUP_FEED_PM10"), data.pm_ug_per_m3(10),
                    os.environ.get("ADAFRUIT_GROUP_NAME"))
-    time.sleep(5)
+    time.sleep(10)
